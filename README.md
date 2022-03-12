@@ -632,6 +632,13 @@ foreach (var cancelWhenNotAllowed in new[] {auto, reverse, manual, custom, done}
 - `AacFlBoolParameter InStation` -> Bool /// Create a Bool parameter in the animator named InStation.
 - `AacFlFloatParameter Voice` -> Float /// Create a Float parameter in the animator named Voice.
 
+## Avatar Dynamics
+
+- `AacFlBoolParameter IsGrabbed(VRCPhysBone physBone)` -> Bool /// Create a Bool parameter in the animator named after the PhysBone _IsGrabbed parameter.
+- `AacFlFloatParameter Stretch(VRCPhysBone physBone)` -> Float /// Create a Float parameter in the animator named after the PhysBone _Stretch parameter.
+- `AacFlFloatParameter Angle(VRCPhysBone physBone)` -> Float /// Create a Float parameter in the animator named after the PhysBone _Angle parameter.
+- `AacFlFloatParameter Contact(VRCContactReceiver contactReceiver)` -> Float /// Create a Float parameter in the animator named after the Contact Receiver parameter.
+
 ## Supporting conditions
 
 - `IAacFlCondition ItIsRemote()` /// Verify that IsLocal is false. Create a Bool parameter in the animator named IsLocal.

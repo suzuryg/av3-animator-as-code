@@ -5,6 +5,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 using Random = UnityEngine.Random;
+using VRC.SDK3.Dynamics.PhysBone.Components;
 
 // ReSharper disable once CheckNamespace
 namespace AnimatorAsCode.V0
@@ -411,6 +412,11 @@ namespace AnimatorAsCode.V0
 
         public IAacFlCondition ItIsRemote() => IsLocal.IsFalse();
         public IAacFlCondition ItIsLocal() => IsLocal.IsTrue();
+
+        public AacFlBoolParameter IsGrabbed(VRCPhysBone physBone) => _backingAnimator.BoolParameter($"{physBone.parameter}_IsGrabbed");
+        public AacFlFloatParameter Stretch(VRCPhysBone physBone) => _backingAnimator.FloatParameter($"{physBone.parameter}_Stretch");
+        public AacFlFloatParameter Angle(VRCPhysBone physBone) => _backingAnimator.FloatParameter($"{physBone.parameter}_Angle");
+        public AacFlFloatParameter Contact(VRCContactReceiver contactReceiver) => _backingAnimator.FloatParameter(contactReceiver.parameter);
 
         public enum Av3Gesture
         {
