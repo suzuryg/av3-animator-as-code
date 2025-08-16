@@ -523,13 +523,15 @@ namespace AnimatorAsCode.V1
             return new AacFlClip(_configuration, clip);
         }
         
-        /// Create a new BlendTree asset with a name. However, the name is only used as a suffix for the asset. The asset is generated into the container.
+        /// Create a new BlendTree asset with a name. However, the name is only used as a suffix for the asset. The asset is generated into the container.<br/>
+        /// Added in 1.3.0.
         public AacFlNonInitializedBlendTree NewBlendTree(string name)
         {
             return new AacFlNonInitializedBlendTree(AacInternals.NewBlendTreeAsRaw(_configuration, name));
         }
 
-        /// Create a new BlendTree asset with a name and returns a native BlendTree object. However, the name is only used as a suffix for the asset. The asset is generated into the container. You may use NewBlendTree() instead to obtain a fluent interface.
+        /// Create a new BlendTree asset with a name and returns a native BlendTree object. However, the name is only used as a suffix for the asset. The asset is generated into the container. You may use NewBlendTree() instead to obtain a fluent interface.<br/>
+        /// Added in 1.3.0.
         public BlendTree NewBlendTreeAsRaw(string name)
         {
             return AacInternals.NewBlendTreeAsRaw(_configuration, name);
@@ -639,6 +641,13 @@ namespace AnimatorAsCode.V1
         public AacFlNoAnimator NoAnimator()
         {
             return new AacFlNoAnimator();
+        }
+
+        /// Returns a new AacFlModification instance, granting you access to this destructive modification API. You will need to reuse this object throughout.<br/>
+        /// Added in 1.3.0.
+        public AacFlModification Modification()
+        {
+            return new AacFlModification(_configuration, this);
         }
     }
 
